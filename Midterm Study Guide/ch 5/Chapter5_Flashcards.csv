@@ -1,6 +1,0 @@
-Question,Answer
-What is a React component?,A reusable piece of UI in React.
-What are props used for?,To pass data to components.
-What is state in React?,An object that determines how a component behaves.
-What is JSX?,A syntax extension that allows writing HTML-like code in React.
-What are lifecycle methods?,Methods that run at specific points in a component's life.

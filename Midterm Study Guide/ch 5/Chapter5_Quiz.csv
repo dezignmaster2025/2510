@@ -1,5 +1,0 @@
-Question,Option A,Option B,Option C,Correct Answer
-Which syntax allows writing HTML in React?,JS,JSX,HTML,JSX
-Which method updates component state?,setState(),updateState(),changeState(),setState()
-Props are used to:,Style components,Pass data,Manage state,Pass data
-Which lifecycle method runs after component mounts?,componentDidMount,componentWillUnmount,render,componentDidMount
