@@ -1,0 +1,6 @@
+ReactDOM	ReactDOM is the package that provides DOM-specific methods for rendering React components into the browser DOM.
+JSX	JSX is a syntax extension for JavaScript that looks similar to HTML and is used to describe UI elements in React.
+Arrow Function Components	Arrow functions provide a concise way to write function components in React.
+Event Handlers	Event handlers in React are passed as functions to JSX attributes like onClick or onChange.
+Props	Props are inputs to React components that allow data to be passed from parent to child.
+State	State is a way to manage dynamic data in React components using the useState hook.

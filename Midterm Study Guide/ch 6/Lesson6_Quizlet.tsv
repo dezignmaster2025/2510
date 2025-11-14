@@ -1,0 +1,6 @@
+Term	Definition
+Why is the App component defined with PascalCase in React?	A) React components must start with a capital letter to be recognized as components. - React uses capitalization to distinguish custom components from HTML elements. PascalCase signals React that it's a component.
+What makes function components the preferred component type in modern React?	A) They are easier to write and maintain compared to class components. - Function components are simpler, require less boilerplate, and work seamlessly with Hooks for state and lifecycle.
+Why does React use htmlFor instead of for in JSX?	B) JSX follows JavaScript syntax rules, and 'for' is a reserved keyword. - In JavaScript, 'for' is reserved. JSX uses htmlFor to avoid conflicts; it renders as 'for' in HTML.
+What role does JSX play in React applications?	C) It combines JavaScript and HTML-like syntax to create dynamic UIs. - JSX is a syntax extension that allows writing HTML-like code inside JavaScript, compiled to React.createElement calls.
+What does it mean to instantiate a React component?	B) Creating a new instance of a declared component using JSX syntax. - When you write <App /> in JSX, you instantiate the App component so React can render it.

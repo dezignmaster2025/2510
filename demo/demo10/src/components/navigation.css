@@ -1,0 +1,56 @@
+h3,p,h2 {
+    padding: 0;
+    margin: 0;
+}
+
+.nav-button-container {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    color: black;
+    background-color: transparent;
+    border-width: 0;
+    cursor: pointer;
+}
+
+.nav-button-container:hover {
+    color: #26a7de;
+}
+
+.tweet-btn, .tweet-input-btn{
+    background-color: #26a7de ;
+    color: white;
+    font-weight: bold;
+    padding: 10px 0;
+    width: 100%;
+    border-color: transparent;
+    border-radius: 99px;
+}
+
+.nav-container{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+
+}
+
+.feed-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    max-width: 500px;
+    background-color: lightgray;
+    height: 800px;
+}
+
+.side-bar-container{
+    width: 300px;
+    height: 800px;
+} 
+
+.nav-button-main-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+}

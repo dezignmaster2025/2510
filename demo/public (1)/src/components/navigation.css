@@ -1,0 +1,43 @@
+.nav-button-container {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    color: black;
+    background-color: transparent;
+    border-width: 0;
+    cursor: pointer;
+}
+
+.nav-button-container:hover {
+    color: #26a7de;
+}
+
+.tweet-btn{
+    background-color: #26a7de ;
+    color: white;
+    font-weight: bold;
+    padding: 10px 0;
+    width: 100%;
+    border-color: transparent;
+    border-radius: 99px;
+}
+
+.nav-container{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+
+}
+
+.feed-container {
+    width: 500px;
+    background-color: red;
+    height: 800px;
+}
+
+.side-bar-container{
+    width: 300px;
+    background-color: green;
+    height: 800px;
+} 

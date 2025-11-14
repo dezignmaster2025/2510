@@ -1,0 +1,70 @@
+
+
+.tweet-container {
+    display: flex;
+    padding: 8px;
+    background-color: white;
+    border: 1px solid lightgray;
+
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+.tweet-right-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px ;
+    padding-left: 8px;
+}
+
+.tweet-user-section-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.tweet-user-section {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+}
+
+.tweet-action-container{
+    display: flex;
+    column-gap: 84px;
+}
+
+.tweet-body {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    row-gap: 8px;
+    
+}
+.tweet-photo {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    width: 100%;
+}
+
+.tweet-input-btn {
+    width: fit-content;
+    padding: 4px 10px;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.tweet-input {
+    border-width: 0;
+    font-size: 16px;
+    padding: 16px 16px;
+}
