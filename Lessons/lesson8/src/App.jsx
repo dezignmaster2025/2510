@@ -1,49 +1,44 @@
-import { useMemo, useState } from 'react';
-import Search from './components/Search.jsx';
-import ItemList from './components/ItemList.jsx';
+import { useState } from 'react';
 
-/**
- * BONUS sample data — you can replace with anything you like.
- */
-const INITIAL_ITEMS = [
-  { id: 1, name: 'Apple MacBook Air' },
-  { id: 2, name: 'Samsung Galaxy S24' },
-  { id: 3, name: 'Sony WH-1000XM5' },
-  { id: 4, name: 'Nintendo Switch' },
-  { id: 5, name: 'Logitech MX Master 3S' },
-];
+function App() {
+  const [searchTerm, setSearchTerm] = useState("");
 
-export default function App() {
-  // Requirement #2: state that holds the current search term
-  const [searchTerm, setSearchTerm] = useState('');
-
-  // Requirement #2: update state from input change event
   const handleSearch = (event) => {
-    setSearchTerm(event.target.value);
+    setSearchTerm(event.target.value); // Update the searchTerm state
   };
 
-  // Requirement #4 (Bonus): filter items using the search term (case-insensitive)
-  const filteredItems = useMemo(() => {
-    const term = searchTerm.trim().toLowerCase();
-    if (!term) return INITIAL_ITEMS;
-    return INITIAL_ITEMS.filter((item) =>
-      item.name.toLowerCase().includes(term),
-    );
-  }, [searchTerm]);
+  const items = ["Apple", "Banana", "Orange", "Grapes", "Mango"];
+  const filteredItems = items.filter(item =>
+    item.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
-    <div className="app">
-      <h1 className="title">Search Assignment</h1>
-
-      {/* Requirement #3: pass searchTerm & handler to Search */}
-      <Search searchTerm={searchTerm} onSearch={handleSearch} />
-
-      {/* Requirement #4 (Bonus): show filtered list */}
-      <ItemList items={filteredItems} />
-
-      <p className="hint">
-        Try typing <code>sony</code>, <code>switch</code>, or <code>apple</code>.
-      </p>
+    <div>
+      <h1>Search App</h1>
+      <Search onSearch={handleSearch} value={searchTerm} />
+      <p>Searching for: {searchTerm}</p>
+      <ul>
+        {filteredItems.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
     </div>
   );
 }
+
+function Search(props) {
+  return (
+    <div>
+      <label htmlFor="search">Search: </label>
+      <input
+        id="search"
+        type="text"
+        value={props.value}
+        onChange={props.onSearch}
+      />
+    </div>
+  );
+}
+
+export default App;
+
