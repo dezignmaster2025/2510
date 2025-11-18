@@ -55,7 +55,7 @@ function App() {
       );
       if (!response.ok) throw new Error("Request failed");
       const result = await response.json();
-      // API returns stories in result.hits
+      
       dispatch({ type: "FETCH_SUCCESS", payload: result.hits });
     } catch {
       dispatch({ type: "FETCH_FAILURE" });
