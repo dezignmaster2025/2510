@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-
+// notes
 function QuoteBox() {
   return (
     <div className="quote-box">
