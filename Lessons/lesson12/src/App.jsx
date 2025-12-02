@@ -12,7 +12,7 @@ function App() {
       setFact(response.data.fact);
       setError(null);
     } catch (err) {
-      // Log the caught error for debugging and to avoid the "defined but never used" lint warning
+      
       console.error(err);
       setError('Failed to fetch cat fact. Please try again.');
       setFact('');
