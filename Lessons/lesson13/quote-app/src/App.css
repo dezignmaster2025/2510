@@ -1,7 +1,7 @@
 
-/* App.module.css */
+/* App.css */
 
-.quoteBox {
+.quote-box {
   background-color: #f0f8ff;
   padding: 20px;
   border-radius: 10px;
@@ -11,14 +11,14 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.quoteText {
+.quote-text {
   font-size: 18px;
   font-style: italic;
   color: #333;
   margin-bottom: 10px;
 }
 
-.quoteAuthor {
+.quote-author {
   font-size: 16px;
   font-weight: bold;
   color: #555;
