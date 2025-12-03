@@ -1,51 +1,32 @@
+
 import React, { useState } from 'react';
-function App() { 
 
- return ( 
+function App() {
+  return (
+    <>
+      <h2>Welcome to the Counter App</h2>
+      {
+        
+      }
+      <Counter title="Simple Counter" />
+    </>
+  );
+}
 
-   <div> 
+function Counter({ title }) {
+  const [count, setCount] = useState(0);
 
-     <h1>Welcome to the Counter App</h1> 
+  const handleIncrease = () => {
+    setCount(count + 1);
+  };
 
-     <Counter /> 
+  return (
+    <>
+      <h3>{title}</h3>
+      <p>Count: {count}</p>
+      <button onClick={handleIncrease}>Increase</button>
+    </>
+  );
+}
 
-   </div> 
-
- ); 
-
-} 
-
- 
-
-function Counter() { 
-
- // You'll need to add state and props here 
- const [count, setCount] = useState(0);
- const title = "Simple Counter";
-
-
- const handleIncrease = () => {
-   setCount(count + 1);
- }; 
-
- 
-
- return ( 
-
-   <div> 
-
-     <h2>{title}</h2> 
-
-     <p>Count: {count}</p> 
-
-     <button onClick={handleIncrease}>Increase</button> 
-
-   </div> 
-
- ); 
-
-} 
-
- 
-
-export default App; 
+export default App;
