@@ -1,55 +1,65 @@
 
-// ==============================
-// Step 1: Import React hooks
-// ==============================
-import { useState, useEffect } from 'react';
-import Flashcard from './Flashcard';
-import './App.css';
+import { useState, useEffect } from "react";
+import Flashcard from "./Flashcard";
+import LoadingIndicator from "./LoadingIndicator";
+import "./App.css";
 
-// ==============================
-// Step 2: Main App Component
-// ==============================
 function App() {
-  // Step 5: Loading state for indicator
-  const [loading, setLoading] = useState(true);
-
-  // Step 6: State for trivia data from API
+  const [fetching, setFetching] = useState(true);
   const [triviaData, setTriviaData] = useState([]);
+  const [loadingStates, setLoadingStates] = useState([]);
 
-  // ==============================
-  // Step 6: Fetch trivia questions from API
-  // ==============================
   useEffect(() => {
     async function fetchTrivia() {
-      const response = await fetch('https://opentdb.com/api.php?amount=5&type=multiple');
+      setFetching(true);
+      const response = await fetch("https://opentdb.com/api.php?amount=5&type=multiple");
       const data = await response.json();
 
-      // Map API data to question-answer pairs
-      setTriviaData(data.results.map(item => ({
+      const mappedData = data.results.map(item => ({
         question: item.question,
         answer: item.correct_answer
-      })));
+      }));
 
-      // Hide loading indicator
-      setLoading(false);
+      setTriviaData(mappedData);
+      setFetching(false);
+
+      setLoadingStates(new Array(mappedData.length).fill(true));
+
+      mappedData.forEach((_, index) => {
+        setTimeout(() => {
+          setLoadingStates(prev => {
+            const next = [...prev];
+            next[index] = false;
+            return next;
+          });
+        }, (index + 1) * 1500);
+      });
     }
 
     fetchTrivia();
   }, []);
 
-  // ==============================
-  // Step 4 & 5: Render UI
-  // ==============================
+  if (fetching) {
+    return (
+      <div>
+        <h1>Trivia Flashcards</h1>
+        <LoadingIndicator label="Loading questions..." />
+      </div>
+    );
+  }
+
   return (
     <div>
-      {/* Show loading or flashcards */}
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        triviaData.map((item, index) => (
-          <Flashcard key={index} question={item.question} answer={item.answer} />
-        ))
-      )}
+      <h1>Trivia Flashcards</h1>
+      {triviaData.map((item, index) => (
+        <div key={index} className="card-wrapper">
+          {loadingStates[index] ? (
+            <LoadingIndicator label={`Loading card ${index + 1}...`} />
+          ) : (
+            <Flashcard question={item.question} answer={item.answer} />
+          )}
+        </div>
+      ))}
     </div>
   );
 }
